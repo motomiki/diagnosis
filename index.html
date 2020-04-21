@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>あなたのいいところ診断</title>
+    <style>
+    h2{
+    font-size: 1.2em;/* 文字の大きさ */
+    font-weight: bold;/* 文字の太さ */
+    color: #fff;/* 文字の色 */
+    background: #17a2b8;/* 背景色 */
+    border-radius: 5px;/* 四隅の丸み */
+    -webkit-border-radius: 5px;/* 四隅の丸みと同じ数字に */
+    -moz-border-radius: 5px;/* 四隅の丸みと同じ数字に */
+    position: relative;
+    margin-bottom: 0 0 1.5em;
+    padding: 0.5em 0.8em;
+    }
+    h2:after{
+    border-top: 15px solid #17a2b8;/* 下の出っ張り部分の色 */
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    position: absolute;
+    bottom: -15px;
+    left: 5%;
+    z-index: 90;
+    content: "";
+    }
+    @media screen and (max-width: 640px) {
+    .tbl-r04 {
+        width: 80%;
+    } 
+    .tbl-r04 tr,
+    .tbl-r04 th,
+    .tbl-r04 td{
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+}
+    </style>
+</head>
+<body class="container">
+    <nav class="navbar navbar-light bg-light">
+        <!-- <h1 class="navbar-brand">あなたのいいところ診断</h1> -->
+        <img class="img-fluid" src="img/logo.png" alt="">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="https://motomiki-lab.life/">モトミキラボ <i class="fas fa-desktop"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://twitter.com/motomiki_lab">Twitter <i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.youtube.com/channel/UCGgiAj4eN1wFoaQDNIn46jg">YouTube <i class="fab fa-youtube"></i></a>
+            </li>
+            </ul>
+        </nav>
+    <div>
+        <div class="my-3 bg-warning rounded" style="padding: 20px 30px;">
+            <h2>あなたのいいところは？</h2>
+            <p></p>
+            <p>診断したい名前を入れて下さい</p>
+            <input type="text" class="form-control" id="user-name" size="40" maxlength="20">
+            <button id="assessment" class="btn btn-info my-3">診断する</button>
+            <div id="result-area" class="my-3"></div>
+            <div id="tweet-area"></div>
+            <div id="image-area" class="my-3 text-center bg-white"></div>
+        </div>
+    </div>
+    <div>
+        <table class="table tbl-r04">
+            <thead>
+                <tr class="thead">
+                    <th scope="col"><i class="fas fa-user"></i> 製作者</th>
+                    <th scope="col"><i class="fas fa-desktop"></i> Webサイト</th>
+                    <th scope="col"><i class="fab fa-twitter"></i> Twitter</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="color: #666;">もとみき</td>
+                    <td><a href="https://motomiki-lab.life/" style="color: #666;">https://motomiki-lab.life/</a></td>
+                    <td><a href="https://twitter.com/motomiki_lab" style="color: #666;">https://twitter.com/motomiki_lab</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin-bottom: 20px;">
+            <button type="button" class="btn btn-warning">
+                <a href="https://twitter.com/share?url=https://motomiki-lab.life/diagnosis/&text=「あなたのいいところ診断」はこちら。&via=motomiki_lab&hashtags=あなたのいいところ診断" style="color: white;"><i class="fab fa-twitter mr-2"></i>シェアしていただけると嬉しいです！</a>
+                <!-- <a href="https://twitter.com/intent/tweet?button_hashtag=あなたのいいところ診断&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-text="「あなたのいいところ診断」はこちら。" data-url="https://motomiki-lab.life/diagnosis/" data-related="motomiki_lab" data-lang="ja" data-show-count="false">Tweet #あなたのいいところ診断</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            </button>
+        </div>
+    </div>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>&copy; Copyright | motomiki-lab All Right Reserved</p>
+        </div>
+    </footer>
+    <script src="diagnosis.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
